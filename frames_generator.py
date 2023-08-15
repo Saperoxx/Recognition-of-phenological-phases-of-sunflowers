@@ -1,11 +1,11 @@
 import cv2
 import os
 # Read the video from specified path
-cam = cv2.VideoCapture("PATH/TO/VIDEO")
-folder_name = 'FOLDER_NAME'
+video = cv2.VideoCapture("PATH_TO_VIDEO")
+folder_name = "PATH_TO_FOLDER"
 currentframe = 0
 counter = 0
-num_frames = 28
+num_frames = 20
 
 try:
 # creating a folder
@@ -18,7 +18,7 @@ except OSError:
 
 while(True):
 # reading from frame
-    ret,frame = cam.read()
+    ret,frame = video.read()
 
     if counter % num_frames == 0:
         if ret:
@@ -27,12 +27,9 @@ while(True):
             print ('Creating...' + name)
             # writing the extracted images
             cv2.imwrite(name, frame)
-            # increasing counter so that it will
-            # show how many frames are created
             currentframe += 1
         else:
             break
     counter += 1
-    print(counter)
-# Release all space and windows once done
-cam.release()
+
+video.release()

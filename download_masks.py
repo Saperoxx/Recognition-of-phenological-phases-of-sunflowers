@@ -12,9 +12,9 @@ from tqdm import tqdm
 import cv2
 
 def download():
-    client = Client(api_key='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbGV4NWd3YTkwbzdhMDc0M2RjZXdmM3Z4Iiwib3JnYW5pemF0aW9uSWQiOiJjbGV4NWd3ODMwbzc5MDc0M2ZwMzg4dno2IiwiYXBpS2V5SWQiOiJjbGYzdHdiNW4xY3drMDgyczByb2VmaHgyIiwic2VjcmV0IjoiODI3MTIwZjc1YTVhNTFlMWY0NWQyY2YzNmE0YzEzYTAiLCJpYXQiOjE2Nzg1MzA3OTUsImV4cCI6MjMwOTY4Mjc5NX0.mQKPRfOSpgQ-uhd3vsKvQs7cZXE0A5mw5mtTBI3U54Y')
+    client = Client(api_key='API_KEY')
 
-    project = client.get_project('clezrgpm711mf07w63ev175kn')
+    project = client.get_project('PROJECT_KEY')
     labels = project.label_generator()
 
     rgb_dir = Path('./data/sunflowers/images/')
